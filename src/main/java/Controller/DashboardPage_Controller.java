@@ -37,7 +37,7 @@ public class DashboardPage_Controller {
     void roomInfoAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/RoomInfoPage.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
