@@ -30,20 +30,20 @@
             <children>
 
                 <!-- Table -->
-                <TableView fx:id="tblCustomer" layoutX="14.0" layoutY="14.0" prefHeight="260.0" prefWidth="522.0" style="-fx-background-radius: 10;">
+                <TableView fx:id="tblRoomInfo" layoutX="14.0" layoutY="14.0" prefHeight="260.0" prefWidth="522.0" style="-fx-background-radius: 10;">
                     <columns>
-                        <TableColumn fx:id="colCustomerId" prefWidth="95.20001983642578" text="Room ID" />
-                        <TableColumn fx:id="colName" prefWidth="148.00006103515625" text="Type" />
-                        <TableColumn fx:id="colPhone" prefWidth="170.39990234375" text="Description" />
-                        <TableColumn fx:id="colCity" prefWidth="107.20004272460938" text="Price" />
+                        <TableColumn fx:id="colRoomId" prefWidth="95.20001983642578" text="Room ID" />
+                        <TableColumn fx:id="colType" prefWidth="148.00006103515625" text="Type" />
+                        <TableColumn fx:id="colDescription" prefWidth="170.39990234375" text="Description" />
+                        <TableColumn fx:id="colPrice" prefWidth="107.20004272460938" text="Price" />
                     </columns>
                 </TableView>
 
                 <!-- Input Fields -->
-                <TextField fx:id="txtCustomerId" layoutX="98.0" layoutY="307.0" prefHeight="27.0" prefWidth="177.0" promptText="Room ID" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
-                <TextField fx:id="txtName" layoutX="293.0" layoutY="307.0" prefHeight="27.0" prefWidth="170.0" promptText="Type" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
-                <TextField fx:id="txtPhone" layoutX="293.0" layoutY="350.0" prefHeight="27.0" prefWidth="170.0" promptText="Description" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
-                <TextField fx:id="txtCity" layoutX="98.0" layoutY="350.0" prefHeight="27.0" prefWidth="177.0" promptText="Price" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
+                <TextField fx:id="txtRoomId" layoutX="98.0" layoutY="307.0" prefHeight="27.0" prefWidth="177.0" promptText="Room ID" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
+                <TextField fx:id="txtType" layoutX="293.0" layoutY="307.0" prefHeight="27.0" prefWidth="170.0" promptText="Type" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
+                <TextField fx:id="txtDiscription" layoutX="293.0" layoutY="350.0" prefHeight="27.0" prefWidth="170.0" promptText="Description" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
+                <TextField fx:id="txtPrice" layoutX="98.0" layoutY="350.0" prefHeight="27.0" prefWidth="177.0" promptText="Price" style="-fx-background-radius: 10; -fx-background-color: #f5f9fc; -fx-border-color: #90caf9; -fx-border-radius: 10;" />
 
                 <!-- Buttons -->
                 <Button fx:id="btnAdd" layoutX="70.0" layoutY="427.0" onAction="#btnAddAction" prefWidth="90.0" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 15;" text="Add" />

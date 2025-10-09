@@ -4,16 +4,27 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
 
-public class RoomInfo_Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class RoomInfo_Controller implements Initializable {
     ObservableList<RoomInfoDTO> roomInfoDTOS = FXCollections.observableArrayList(
-        new RoomInfoDTO()
+            new RoomInfoDTO("R001","Singal","one person",8000),
+            new RoomInfoDTO("R002","Double","two person",12000),
+            new RoomInfoDTO("R003","Tribal","three person",20000),
+            new RoomInfoDTO("R004","Multy","Multy person",25000),
+            new RoomInfoDTO("R005","Singal","one person",8000),
+            new RoomInfoDTO("R006","Singal","one person",8000),
+            new RoomInfoDTO("R007","Singal","one person",8000),
+            new RoomInfoDTO("R008","Singal","one person",8000)
     );
 
     @FXML
@@ -32,31 +43,31 @@ public class RoomInfo_Controller {
     private Button btnUpdate;
 
     @FXML
-    private TableColumn<?, ?> colCity;
+    private TableColumn<?, ?> colDescription;
 
     @FXML
-    private TableColumn<?, ?> colCustomerId;
+    private TableColumn<?, ?> colPrice;
 
     @FXML
-    private TableColumn<?, ?> colName;
+    private TableColumn<?, ?> colRoomId;
 
     @FXML
-    private TableColumn<?, ?> colPhone;
+    private TableColumn<?, ?> colType;
 
     @FXML
-    private TableView<?> tblCustomer;
+    private TableView<RoomInfoDTO> tblRoomInfo;
 
     @FXML
-    private TextField txtCity;
+    private TextField txtDiscription;
 
     @FXML
-    private TextField txtCustomerId;
+    private TextField txtPrice;
 
     @FXML
-    private TextField txtName;
+    private TextField txtRoomId;
 
     @FXML
-    private TextField txtPhone;
+    private TextField txtType;
 
     @FXML
     void btnAddAction(ActionEvent event) {
@@ -83,4 +94,22 @@ public class RoomInfo_Controller {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        tblRoomInfo.setItems(roomInfoDTOS);
+
+        tblRoomInfo.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
+            if(newValue!=null){
+                txtRoomId.setText(newValue.getRoomId());
+                txtType.setText(newValue.getType());
+                txtDiscription.setText(newValue.getType());
+                txtPrice.setText(String.valueOf(newValue.getPrice()));
+            }
+        });
+
+    }
 }
