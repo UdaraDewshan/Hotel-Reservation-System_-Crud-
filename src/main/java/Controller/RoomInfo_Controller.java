@@ -79,6 +79,11 @@ public class RoomInfo_Controller implements Initializable {
         RoomInfoDTO roomInfoDTO = new RoomInfoDTO(id,type,description,price);
         roomInfoDTOS.add(roomInfoDTO);
         tblRoomInfo.refresh();
+
+        txtRoomId.setText("");
+        txtType.setText("");
+        txtDiscription.setText("");
+        txtPrice.setText("");
     }
 
     @FXML
@@ -88,11 +93,23 @@ public class RoomInfo_Controller implements Initializable {
 
     @FXML
     void btnClearAction(ActionEvent event) {
-
+        txtRoomId.setText("");
+        txtType.setText("");
+        txtDiscription.setText("");
+        txtPrice.setText("");
     }
 
     @FXML
     void btnDeleteAction(ActionEvent event) {
+        RoomInfoDTO selectedItem = tblRoomInfo.getSelectionModel().getSelectedItem();
+        roomInfoDTOS.remove(selectedItem);
+        
+        txtRoomId.setText("");
+        txtType.setText("");
+        txtDiscription.setText("");
+        txtPrice.setText("");
+
+        tblRoomInfo.refresh();
 
     }
 
