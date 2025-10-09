@@ -92,7 +92,17 @@ public class RoomInfo_Controller implements Initializable {
 
     @FXML
     void btnBackAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashboardPage.fxml"));
+            Scene scene = new Scene(loader.load());
 
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Dashboard");
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
