@@ -4,14 +4,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.dto.RoomInfoDTO;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -103,7 +107,7 @@ public class RoomInfo_Controller implements Initializable {
     void btnDeleteAction(ActionEvent event) {
         RoomInfoDTO selectedItem = tblRoomInfo.getSelectionModel().getSelectedItem();
         roomInfoDTOS.remove(selectedItem);
-        
+
         txtRoomId.setText("");
         txtType.setText("");
         txtDiscription.setText("");
@@ -115,6 +119,18 @@ public class RoomInfo_Controller implements Initializable {
 
     @FXML
     void btnUpdateAction(ActionEvent event) {
+        RoomInfoDTO selectedItem = tblRoomInfo.getSelectionModel().getSelectedItem();
+        selectedItem.setRoomId(txtRoomId.getText());
+        selectedItem.setType(txtType.getText());
+        selectedItem.setDescription(txtDiscription.getText());
+        selectedItem.setPrice(Double.parseDouble(txtPrice.getText()));
+
+        txtRoomId.setText("");
+        txtType.setText("");
+        txtDiscription.setText("");
+        txtPrice.setText("");
+
+        tblRoomInfo.refresh();
 
     }
 
@@ -130,7 +146,7 @@ public class RoomInfo_Controller implements Initializable {
             if(newValue!=null){
                 txtRoomId.setText(newValue.getRoomId());
                 txtType.setText(newValue.getType());
-                txtDiscription.setText(newValue.getType());
+                txtDiscription.setText(newValue.getDescription());
                 txtPrice.setText(String.valueOf(newValue.getPrice()));
             }
         });
