@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class RoomInfo_DTO {
+public class RoomInfoDTO {
     private String roomId;
     private String type;
     private String description;

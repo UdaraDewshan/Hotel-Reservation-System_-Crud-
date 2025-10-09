@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,10 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.dto.RoomInfoDTO;
 
 public class RoomInfo_Controller {
 
-
+    ObservableList<RoomInfoDTO> roomInfoDTOS = FXCollections.observableArrayList(
+        new RoomInfoDTO()
+    );
 
     @FXML
     private Button btnAdd;
