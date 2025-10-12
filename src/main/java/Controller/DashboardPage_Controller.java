@@ -24,7 +24,7 @@ public class DashboardPage_Controller {
     void customerInfoAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/CustomerInfoPage.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
