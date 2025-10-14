@@ -50,7 +50,7 @@ public class DashboardPage_Controller {
     void staffAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/StaffPage.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
